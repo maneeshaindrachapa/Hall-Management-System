@@ -129,3 +129,11 @@ background: #FCAC45;
 border-color: #FCAC45;
   color: #ffffff;
 }
+
+.btn:focus,
+.btn:active:focus,
+.btn.focus,
+.btn:active.focus{
+    outline: none;
+}
+

@@ -44,8 +44,8 @@ export class LoginComponent implements OnInit {
       this.loginService.setIndex(this.users.indexno);
       if(this.users.type=="student"){
         this.router.navigate(["user/profile"]);
-      }else if(this.users.type=="admin"){
-        this.router.navigate(["admin"]);
+      }else if(this.users.type=="Admin"){
+        this.router.navigate(["admin/home"]);
       }
     },
     error=>{

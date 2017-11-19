@@ -1,7 +1,7 @@
 <header>
   <h2 id="title">Sumanadasa Hall Management System</h2>
   <div class="logout">
-      <button type="button" class="btn btn-warning" (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i></button>
+      <button type="button" class="btn btn-warning" (click)="logout()" ><i class="fa fa-power-off" aria-hidden="true"></i></button>
   </div>
 </header>
 <div id="header space"></div>
@@ -36,7 +36,7 @@
     <div class="row">
       <div class="col-sm-3">
         <div class="well">
-          <h4>Hall Number</h4>
+          <h4><i class="fa fa-home" aria-hidden="true"></i> Hall Number </h4>
           <p>{{details.hall_id}}</p> 
         </div>
       </div>
@@ -48,8 +48,8 @@
       </div>
       <div class="col-sm-3">
         <div class="well">
-          <h4>Sessions</h4>
-          <p>10 Million</p> 
+          <h4>Year</h4>
+          <p>{{details.year}}</p> 
         </div>
       </div>
       <div class="col-sm-3">

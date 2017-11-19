@@ -13,12 +13,13 @@ import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { UserComponent } from './components/user/user.component';
 import { ProfileComponent } from './components/user/components/profile/profile.component';
+import { HomeComponent } from './components/admin/components/home/home.component';
 
 
 const appRoutes: Routes= [
   {path:"", component:LoginComponent},
   {path:"user", component:UserComponent,children:[{path:"profile",component:ProfileComponent}]},
-  {path:"admin", component:AdminComponent}
+  {path:"admin", component:AdminComponent,children:[{path:"home",component:HomeComponent}]}
 ];
 
 
@@ -29,6 +30,7 @@ const appRoutes: Routes= [
     AdminComponent,
     UserComponent,
     ProfileComponent,
+    HomeComponent,
    
   ],
   imports: [
