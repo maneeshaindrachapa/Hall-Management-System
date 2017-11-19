@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+ .row.content {height: 550px}
+ 
+ /* Set gray background color and 100% height */
+ .sidenav {
+   background-color: darkcyan;
+   height: 100%;
+   color:white;
+ }
+     
+ /* On small screens, set height to 'auto' for the grid */
+ @media screen and (max-width: 767px) {
+   .row.content {height: auto;}
+   nav#footer[_ngcontent-c2]{bottom:unset} 
+
+ }
+
+ .logout{
+   position: absolute;
+   top: 5px;
+   right: 5px;
+   margin: 1%;
+   z-index: 5;
+   display:block;
+ }
+ .container-fluid{
+   margin:1%;
+ }
+ .content{
+  margin-top: 4%;
+ }
+
+ .changes{
+   width:100%;
+   margin-bottom: 5px;
+   margin-top:10px;
+ }
+
+ header{
+  margin: 0;
+  padding:0;
+  position: fixed;
+  z-index: 25;
+  width: 100%;
+  top:0;
+  background-color: darkcyan;
+  color: white;
+  
+}
+#header-space{
+  height: 20%;
+}
+#title{
+  text-align: center;
+  padding: 20px;
+  display: block;
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+}
+.container-fluid{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.editDetails{
+  margin-top:2%;
+}
+
+.alert {
+  background: #e6845e;
+  color: white;
+  padding: 7px;
+  font-size: .9em;
+  margin-bottom: 20px;
+  display: block;
+  animation: 2s alertAnim forwards;
+  width:100%;
+  margin-top:10px;
+  margin-left: 0px;
+  float: none;
+}
+
+@keyframes alertAnim {
+  from {
+      opacity:0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity:1;
+      transform: translateY(0);
+  }
+}
+
+label{
+  margin-top: 15px;
+}
+
+/* Footer */
+nav#footer{
+  font-family: 'Josefin Sans', sans-serif;
+  position: absolute;
+  bottom:0px;
+  width: 100%;
+background: #222222;
+color: #ffffff;
+padding: 20px 0 15px 0;
+}
+nav#footer .fnav{ vertical-align: middle;}
+ul.footer-social li{
+display: inline-block;
+margin-right: 10px;
+}
+nav#footer p{
+font-size: 12px;
+margin-top: 10px;
+}
+#footer i.fa {
+height: 30px;
+width: 30px;
+border: 2px solid #8c8c8c;
+font-size: 20px;
+padding: 4px 5px;
+border-radius: 50%;
+color: #8c8c8c;
+transition: all 0.5s;
+}
+#footer i.fa:hover{
+background: #FCAC45;
+border-color: #FCAC45;
+  color: #ffffff;
+}

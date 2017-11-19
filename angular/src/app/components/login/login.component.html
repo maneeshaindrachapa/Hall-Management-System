@@ -1,0 +1,61 @@
+<header>
+  <h2 id="title">Sumanadasa Hall Management System</h2>
+</header>
+    <div id="header space"></div>
+
+<div class="container signin">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                    <div class="section-title center">
+                        <h2>Sign In</h2>
+                        
+                        <div class="clearfix"></div>            
+                    </div>
+
+                    <form [formGroup]="signinForm" method="post" action="" (ngSubmit)="login(signinForm.value)">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="index_signin">Index No</label>
+                                  
+                                    <div class="alert" *ngIf="!signinForm.controls['index_signin'].valid && signinForm.controls['index_signin'].touched">{{ titleAlert }}</div>
+
+                                    <input type="text" class="form-control" id="index_signin" placeholder="Index No" name="index_signin" formControlName="index_signin">                                      
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="password_signin">Password</label>
+
+                                    <div class="alert" *ngIf="!signinForm.controls['password_signin'].valid && signinForm.controls['password_signin'].touched">{{ titleAlert }}</div>
+
+                                    <input type="password" class="form-control" id="password_signin" placeholder="Password" name="password_signin" formControlName="password_signin">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn tf-btn btn-default" name="submit_signin" [disabled]="!signinForm.valid">Submit</button>
+                    </form>
+
+                    <span class="alert" *ngIf="error" id="error">{{error_message}}</span>
+                </div>
+            </div>
+        </div>
+        <nav id="footer">
+          <div class="container">
+              <div class="pull-left fnav">
+                  <p>ALL RIGHTS RESERVED. COPYRIGHT © 2017. Designed by MiracalSolutions &#169;</p>
+              </div>
+          </div>
+      </nav>
+
+      <ng-template #forminfo>
+          <div class="form-container">
+            <div class="row columns">
+                <p>{{index_signin }}</p>
+                <p>{{ password_signin }}</p>
+            </div>
+          </div>
+        </ng-template>

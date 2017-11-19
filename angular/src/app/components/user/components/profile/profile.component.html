@@ -1,0 +1,107 @@
+<header>
+  <h2 id="title">Sumanadasa Hall Management System</h2>
+  <div class="logout">
+      <button type="button" class="btn btn-warning" (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i></button>
+  </div>
+</header>
+<div id="header space"></div>
+
+
+<div class="container-fluid">
+<div class="row content">
+  <div class="col-sm-3 sidenav hidden-xs">
+    <h2>{{details.firstname}}</h2>
+    <button type="button" (click)="toggleEdit()" class="btn btn-warning changes">Edit Profile Details</button>
+    <div class="nav nav-pills nav-stacked editDetails" *ngIf=editDetails>
+      <label for="firstname">First Name</label>
+      <input type="text" [(ngModel)]="details.firstname"  name="details.firstname" class="form-control" id="firstname" >
+      <label for="lastname">Last Name</label>
+      <input type="text" [(ngModel)]="details.lastname" name="details.lastname" class="form-control" id="lastname">
+      <label for="password">password</label>
+      <input type="password" [(ngModel)]="details.password" name="details.password" class="form-control" id="password">
+      <label for="re-enter-password">Re Enter Password</label>
+      <input type="password"[(ngModel)]="re_enter_password" name="re_enter_password" class="form-control" id="re-enter-password">
+      <span class="alert" *ngIf="error">{{errorMessage}}</span>
+      <button class="btn btn-warning changes" (click)="changeDetails()">Change Details</button>
+      <span class="alert" *ngIf="success">{{successMessage}}</span>
+    </div><br>
+  </div>
+  <br>
+  
+  <div class="col-sm-9">
+    <div class="well">
+      <h4>Dashboard</h4>
+      <p>Some text..</p>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Hall Number</h4>
+          <p>{{details.hall_id}}</p> 
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Room Number</h4>
+          <p>{{details.room_id}}</p> 
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Sessions</h4>
+          <p>10 Million</p> 
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Bounce</h4>
+          <p>30%</p> 
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="well">
+          <p>Text</p> 
+          <p>Text</p> 
+          <p>Text</p> 
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="well">
+          <p>Text</p> 
+          <p>Text</p> 
+          <p>Text</p> 
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="well">
+          <p>Text</p> 
+          <p>Text</p> 
+          <p>Text</p> 
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="well">
+          <p>Text</p> 
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="well">
+          <p>Text</p> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<nav id="footer">
+  <div class="container">
+      <div class="pull-left fnav">
+          <p>ALL RIGHTS RESERVED. COPYRIGHT © 2017. Designed by MiracalSolutions &#169;</p>
+      </div>
+  </div>
+</nav>
