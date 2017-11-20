@@ -36,3 +36,10 @@
     font-family: 'Josefin Sans', sans-serif;
     margin: 0;
   }
+  .btn:focus,
+  .btn:active:focus,
+  .btn.focus,
+  .btn:active.focus{
+      outline: none;
+  }
+  
