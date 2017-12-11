@@ -14,12 +14,13 @@ import { AdminComponent } from './components/admin/admin.component';
 import { UserComponent } from './components/user/user.component';
 import { ProfileComponent } from './components/user/components/profile/profile.component';
 import { HomeComponent } from './components/admin/components/home/home.component';
+import { AddUserComponent } from './components/admin/components/add-user/add-user.component';
 
 
 const appRoutes: Routes= [
   {path:"", component:LoginComponent},
   {path:"user", component:UserComponent,children:[{path:"profile",component:ProfileComponent}]},
-  {path:"admin", component:AdminComponent,children:[{path:"home",component:HomeComponent}]}
+  {path:"admin", component:AdminComponent,children:[{path:"home",component:HomeComponent},{path:"adduser",component:AddUserComponent}]}
 ];
 
 
@@ -31,7 +32,7 @@ const appRoutes: Routes= [
     UserComponent,
     ProfileComponent,
     HomeComponent,
-   
+    AddUserComponent,
   ],
   imports: [
     BrowserModule,

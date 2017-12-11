@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from "../../services/login.service";
 import { Router } from "@angular/router";
 import { FormBuilder,FormGroup, FormControl, Validators } from '@angular/forms';
+import { resolve } from 'q';
+
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,7 @@ export class LoginComponent implements OnInit {
   password_signin:string;
   post:any;
   error:boolean=false;
-  users:{ indexno:string,
+  users:{ indexNo:string,
           password:string,
           type:string
   };          
@@ -41,7 +43,11 @@ export class LoginComponent implements OnInit {
     this.password_signin=post.password_signin;
     this.loginService.login(this.index_signin,this.password_signin).subscribe(users=>{
       this.users=users;
-      this.loginService.setIndex(this.users.indexno);
+
+      window.localStorage.setItem("auth-key",users.indexNo);
+      this.loginService.setLoggedin(false);
+
+      this.loginService.setIndex(this.users.indexNo);
       if(this.users.type=="student"){
         this.router.navigate(["user/profile"]);
       }else if(this.users.type=="Admin"){

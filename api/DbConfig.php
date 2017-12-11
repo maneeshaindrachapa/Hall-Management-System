@@ -1,10 +1,10 @@
 <?php
 class DbConfig{
     
-    private $_host='localhost';
-    private $_username='root';
-    private $_password='';
-    private $_database='sumanadasadb';
+    private $_host='localhost'; //host name
+    private $_username='root'; //username for the database
+    private $_password='';  //password for the database
+    private $_database='sumanadasadb'; //database name
 
     protected $connection;
     public function __construct(){

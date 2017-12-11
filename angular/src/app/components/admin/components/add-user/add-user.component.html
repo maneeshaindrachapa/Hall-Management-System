@@ -1,0 +1,99 @@
+<div class="header">
+    <ul id="navelements">
+        <li class="element"id="title"><h4 >Sumanadasa Hall Management System</h4></li>
+        <li class="element">
+            <div class="goback">
+                <button type="button" class="btn" (click)="goBack()" style="border-radius: 50%"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+              </div>
+        </li>
+      </ul>
+  
+  
+</div>
+<div id="header space"></div>
+
+<div class="container signin">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      <div class="section-title center">
+        <h2>Sign Up a New User</h2>
+
+        <div class="clearfix"></div>
+      </div>
+
+      <form [formGroup]="signupForm" method="post" action="" (ngSubmit)="signup(signupForm.value)">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="index_signup">Index No</label>
+
+              <div class="alert" *ngIf="!signupForm.controls['index_signup'].valid && signupForm.controls['index_signup'].touched">{{ titleAlert }}</div>
+
+              <input type="text" class="form-control" id="index_signup" placeholder="Index No" name="index_signup" formControlName="index_signup">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="firstname_signup">First Name</label>
+
+              <div class="alert" *ngIf="!signupForm.controls['firstname_signup'].valid && signupForm.controls['firstname_signup'].touched">{{ titleAlert }}</div>
+
+              <input type="text" class="form-control" id="firstname_signup" placeholder="First Name" name="firstname_signup" formControlName="firstname_signup">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="lastname_signup">Last Name</label>
+
+              <div class="alert" *ngIf="!signupForm.controls['lastname_signup'].valid && signupForm.controls['lastname_signup'].touched">{{ titleAlert }}</div>
+
+              <input type="text" class="form-control" id="lastname_signup" placeholder="Last Name" name="lastname_signup" formControlName="lastname_signup">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="type_signup">Type</label>
+              <div>
+                <select name="type_signup" id="type_signup" class="col-md-12" formControlName="type_signup">
+                  <option value="1" selected>Admin</option>
+                  <option value="2">Employee</option>
+                  <option value="3">Student</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn tf-btn btn-default" name="submit_signup" [disabled]="!signupForm.valid">Submit</button>
+      </form>
+
+      <span class="alert" *ngIf="error" id="error">{{error_message}}</span>
+    </div>
+  </div>
+</div>
+<nav id="footer">
+  <div class="container">
+    <div class="pull-left fnav">
+      <p>ALL RIGHTS RESERVED. COPYRIGHT © 2017. Designed by MiracalSolutions &#169;</p>
+    </div>
+  </div>
+</nav>
+
+<ng-template #forminfo>
+  <div class="form-container">
+    <div class="row columns">
+      <p>{{index_signup }}</p>
+      <p>{{ firstname_signup }}</p>
+      <p>{{ lastname_signup }}</p>
+      <p>{{ type_signup }}</p>
+    </div>
+  </div>
+</ng-template>

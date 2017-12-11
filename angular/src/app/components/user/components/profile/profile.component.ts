@@ -17,7 +17,8 @@ export class ProfileComponent implements OnInit {
             year:number,
             hall_id:number,
             room_id:number,
-            password:string};
+            password:string,
+            hall_name:string};
   re_enter_password:string;
   editDetails:boolean=false;
   errorMessage:string="";
@@ -34,7 +35,8 @@ export class ProfileComponent implements OnInit {
       year:null,
       hall_id:null,
       room_id:null,
-      password:""  
+      password:"",
+      hall_name:""  
     }
     this.loginService.getDetails().subscribe(details=>{
       this.details.firstname=(details.firstname);
@@ -44,6 +46,7 @@ export class ProfileComponent implements OnInit {
       this.details.hall_id=details.hall_id;
       this.details.room_id=details.room_id;
       this.details.password=details.password;
+      this.details.hall_name=details.hall_name;
     });
     console.log(this.index_signin);
     
@@ -57,6 +60,7 @@ export class ProfileComponent implements OnInit {
   }
   
   logout(){
+    window.localStorage.removeItem('auth-key');
     this.router.navigate([""]);
   }
 

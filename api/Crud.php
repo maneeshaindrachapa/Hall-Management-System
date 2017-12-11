@@ -25,7 +25,7 @@ class Crud extends DbConfig{
     public function execute($query){
         $result=$this->connection->query($query);
         if($result==false){
-            echo "Error:Cannot execute the command";
+            echo $this->connection->error;
             return false;
         }else{
             return true;
