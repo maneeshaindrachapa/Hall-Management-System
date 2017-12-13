@@ -8,27 +8,54 @@ import { LoginService } from "../../../../services/login.service";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  hallDetails:{ 
+  requests:Request[];
+   
+  constructor(private loginService:LoginService, private router:Router) { 
+    this.getrequests();  
+  }
+
+  ngOnInit() {
+  }
+  getrequests(){
+    this.loginService.getRequests().subscribe(requests=>{
+      this.requests=requests;
+    });
+  }
+
+  logout(){
+    window.localStorage.removeItem('auth-key');
+    this.router.navigate([""]);
+  }
+
+  addUser(){
+    this.router.navigate(["admin/adduser"]);
+  }
+
+  requestApprove(request){
+    console.log(request.req_id);
+    this.loginService.requestApprove(request.req_id,request.hall_id,request.room_no,request.free_beds,request.indexno).subscribe(res=>{
+      this.getrequests();
+      console.log("approved");
+    });
+    
+  }
+
+  requestIgnore(request){
+    this.loginService.requestIgnore(request.req_id).subscribe(res=>{
+      console.log("Ignored");
+    });
+  }
+}
+
+interface Request{
+    req_id:number,
+    indexno:string,
+    dept_name:string;
+    year:number,
     hall_id:number,
     hall_name:string,
     room_no:number,
     room_type:string,
     room_capacity:number,
-};     
-  constructor(private loginService:LoginService, private router:Router) { 
-    this.loginService.getHalls().subscribe(hallDetails=>{
-      this.hallDetails=hallDetails;
-    });
-  }
-
-  ngOnInit() {
-  }
-  
-  logout(){
-    window.localStorage.removeItem('auth-key');
-    this.router.navigate([""]);
-  }
-  addUser(){
-    this.router.navigate(["admin/adduser"]);
-  }
+    free_beds:number
 }

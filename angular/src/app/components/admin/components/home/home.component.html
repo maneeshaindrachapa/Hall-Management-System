@@ -21,16 +21,22 @@
 <div class="details">
     <div>
       <section>
-      <h4 id="hallID">halls</h4>
+      <h4 id="reqID">Requests for Rooms</h4>
       <div  class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
           <thead class="thead-dark">
             <tr>
+              <th scope="col">#</th>
+              <th scope="col">Index Number</th>
+              <th scope="col">Department</th>
+              <th scope="col">Year</th>
               <th scope="col">Hall Number</th>
               <th scope="col">Hall Name</th>
               <th scope="col">Room Number</th>
               <th scope="col">Room Type</th>
+              <th scope="col">Room Capacity</th>
               <th scope="col">Free Beds</th>
+              <th scope="col">Assign / Ignore</th>
             </tr>
           </thead>
             </table>
@@ -38,12 +44,19 @@
           <div class="tbl-content">
             <table cellpadding="0" cellspacing="0" border="0">
               <tbody>
-              <tr *ngFor="let hall of hallDetails">
-                <td>{{hall.hall_id}}</td>
-                <td>{{hall.hall_name}}</td>
-                <td>{{hall.room_no}}</td>
-                <td>{{hall.room_type}}</td>
-                <td>{{hall.room_capacity}}</td>
+              <tr *ngFor="let request of requests">
+                <td>{{request.req_id}}</td>
+                <td>{{request.indexno}}</td>
+                <td>{{request.dept_name}}</td>
+                <td>{{request.year}}</td>
+                <td>{{request.hall_id}}</td>
+                <td>{{request.hall_name}}</td>
+                <td>{{request.room_no}}</td>
+                <td>{{request.room_type}}</td>
+                <td>{{request.room_capacity}}</td>
+                <td>{{request.free_beds}}</td>
+                <td class="assignIgnore"><button class="btn btn-success ai" type="button" (click)="requestApprove(request)"><i class="fa fa-check "></i>
+                  </button>&nbsp;<button class="btn btn-danger ai" type="button" (click)="requestIgnore(request)"><i class="fa fa-times "></i></button></td>
               </tr>
             </tbody>
           </table>

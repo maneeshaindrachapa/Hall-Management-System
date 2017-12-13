@@ -12,6 +12,7 @@ class Crud extends DbConfig{
     public function getData($query){
         $result=$this->connection->query($query);
         if($result==false){
+            echo $this->connection->error;
             return false;
         }
         
