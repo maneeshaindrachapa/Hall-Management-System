@@ -62,7 +62,7 @@ nav#footer p{
     }
 }
 
-.signin{
+.search{
     text-align: center;
     margin-top:8%;
     font-family: 'Comfortaa', cursive;
@@ -77,9 +77,6 @@ label{
     background-color: darkcyan;
     color: white;
     font-size: 20px;
-}
-input{
-    height: 30px;
 }
 
 .header{
@@ -109,9 +106,13 @@ input{
 .fa-arrow-left:hover{
     color: #222;
 }
-#type_signup{
-    margin-bottom: 10px;
-    height: 30px;
+#hall_type{
+    margin-bottom: 2%;
+    height: 50px;
+    width:100%;
+}
+#hall_type option{
+    height:50px;
 }
 li{
     list-style: none;
@@ -134,5 +135,69 @@ li{
     .btn:active.focus{
         outline: none;
     }
+input{
+    height:50px;
+}
 
-    
+/*for table and scroll*/
+table{
+    width:100%;
+    table-layout: fixed;
+  }
+  .tbl-header{
+    background-color: rgba(255,255,255,0.3);
+   }
+  .tbl-content{
+    height:300px;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  th{
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    color: #000000;
+    text-transform: uppercase;
+    font-family: 'Comfortaa', cursive;
+  }
+  td{
+    padding: 15px;
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 12px;
+    color: #000;
+    font-family: 'Comfortaa', cursive;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+  }
+
+  section{
+    margin-top: 5%;
+    width: 100%;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+
+#searchID{
+    font-family: 'Comfortaa', cursive;
+    font-size: 30px;
+    color: #000;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  tr:hover{
+    background: #DDD;
+  }
+  thead tr{
+    background: #ddd;
+  }  

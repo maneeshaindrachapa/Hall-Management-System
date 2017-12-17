@@ -63,7 +63,9 @@ export class ProfileComponent implements OnInit {
     window.localStorage.removeItem('auth-key');
     this.router.navigate([""]);
   }
-
+  search(){
+    this.router.navigate(["user/search"]);
+  }
   changeDetails(details,re_enter_password){
     if(this.details.password!=this.re_enter_password){
       console.log(this.details.password);

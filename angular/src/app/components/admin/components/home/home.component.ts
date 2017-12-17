@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { LoginService } from "../../../../services/login.service";
+import { AdminService } from "../../../../services/admin.service";
 
 @Component({
   selector: 'app-home',
@@ -10,14 +11,15 @@ import { LoginService } from "../../../../services/login.service";
 export class HomeComponent implements OnInit {
   requests:Request[];
    
-  constructor(private loginService:LoginService, private router:Router) { 
+  constructor(private adminService:AdminService ,private loginService:LoginService, private router:Router) { 
     this.getrequests();  
   }
 
   ngOnInit() {
   }
+
   getrequests(){
-    this.loginService.getRequests().subscribe(requests=>{
+    this.adminService.getRequests().subscribe(requests=>{
       this.requests=requests;
     });
   }
@@ -33,7 +35,7 @@ export class HomeComponent implements OnInit {
 
   requestApprove(request){
     console.log(request.req_id);
-    this.loginService.requestApprove(request.req_id,request.hall_id,request.room_no,request.free_beds,request.indexno).subscribe(res=>{
+    this.adminService.requestApprove(request.req_id,request.hall_id,request.room_no,request.free_beds,request.indexno).subscribe(res=>{
       this.getrequests();
       console.log("approved");
     });
@@ -41,7 +43,7 @@ export class HomeComponent implements OnInit {
   }
 
   requestIgnore(request){
-    this.loginService.requestIgnore(request.req_id).subscribe(res=>{
+    this.adminService.requestIgnore(request.req_id).subscribe(res=>{
       console.log("Ignored");
     });
   }

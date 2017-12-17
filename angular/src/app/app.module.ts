@@ -9,17 +9,20 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppComponent } from './app.component';
 
 import {LoginService} from "./services/login.service";
+import {AdminService} from "./services/admin.service";
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { UserComponent } from './components/user/user.component';
 import { ProfileComponent } from './components/user/components/profile/profile.component';
 import { HomeComponent } from './components/admin/components/home/home.component';
 import { AddUserComponent } from './components/admin/components/add-user/add-user.component';
+import { SearchComponent } from './components/user/components/search/search.component';
+
 
 
 const appRoutes: Routes= [
   {path:"", component:LoginComponent},
-  {path:"user", component:UserComponent,children:[{path:"profile",component:ProfileComponent}]},
+  {path:"user", component:UserComponent,children:[{path:"profile",component:ProfileComponent},{path:"search",component:SearchComponent}]},
   {path:"admin", component:AdminComponent,children:[{path:"home",component:HomeComponent},{path:"adduser",component:AddUserComponent}]}
 ];
 
@@ -33,6 +36,8 @@ const appRoutes: Routes= [
     ProfileComponent,
     HomeComponent,
     AddUserComponent,
+    SearchComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,7 @@ const appRoutes: Routes= [
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [LoginService],
+  providers: [LoginService,AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

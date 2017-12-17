@@ -16,14 +16,6 @@
 
  }
 
- .logout{
-   position: absolute;
-   top: 5px;
-   right: 5px;
-   margin: 1%;
-   z-index: 5;
-   display:block;
- }
  .container-fluid{
    margin:1%;
  }
@@ -39,14 +31,14 @@
  #navelements{
   top:5px;
 }
-  .element{
-    display: inline-block;
-    margin-right: 1%;
-    margin-bottom: 1%;
-    margin-top:1%;
-    z-index: 5;
-    float: right;
-  }
+.element{
+  display: inline-block;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  margin-top:1%;
+  z-index: 5;
+  float: right;
+}
   #title{
     float: left;
     padding-bottom: 1%;
@@ -62,9 +54,6 @@
   background-color: darkcyan;
   color: white;
   
-}
-#header-space{
-  height: 20%;
 }
 #title{
   text-align: center;
