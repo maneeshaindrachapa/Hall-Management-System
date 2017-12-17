@@ -24,29 +24,29 @@ export class PaymentComponent implements OnInit {
     
     this.paymentForm=formBuilder.group({
         "indexno":[null, Validators.required],
+        "price":[null,Validators.required],
     });
 }
 
 ngOnInit() {
 }
 
-  payment(post){
-      this.indexno=post.indexno;
-      this.price=post.price;
-      console.log(post.type_signup);
-      this.adminService.payment(this.indexno,this.price).subscribe(
-          res=>{
-            this.error=!this.error;
-            this.error_message="User Created Successfully";
-            console.log(res);
-          },
-          error=>{
-            this.error=!this.error;
-            this.error_message="There is an Error in the data You Input";
-            console.log(this.error_message);
-          }
-      );
-  }
+payment(post){
+    this.indexno=post.indexno;
+    this.price=post.price;
+    this.adminService.payment(this.indexno,this.price).subscribe(
+        res=>{
+          this.error=true;
+          this.error_message="Payment Successful";
+          console.log(res);
+        },
+        error=>{
+          this.error=true;
+          this.error_message="There is an Error in the data You Input";
+          console.log(this.error_message);
+        }
+    );
+}
 
   goBack(){
       this.router.navigate(["admin/home"]);
