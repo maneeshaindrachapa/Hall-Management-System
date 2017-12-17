@@ -34,12 +34,7 @@ export class LoginService {
   updateDetails(indexNo,firstname,lastname,password){
     return this.http.post("http://localhost/Hall-Management-System/api/update.php",{"indexno":indexNo,"firstname":firstname,"lastname":lastname,"password":password}).map(res=>res.json());
   }
-  search(hall_type,price){
-    return this.http.post("http://localhost/Hall-Management-System/api/search.php",{"hall_type":hall_type,"price":price}).map(res=>res.json());
-  }
-  requestroom(indexno,hall_id,room_no){
-    return this.http.post("http://localhost/Hall-Management-System/api/requestRoom.php",{"indexno":indexno,"hall_id":hall_id,"room_no":room_no}).map(res=>res.json());
-  }
+  
   private _errorHandler(error:Response){
     console.error("Error Occured:"+error);
     return Observable.throw(error||"Some error occured in Server");

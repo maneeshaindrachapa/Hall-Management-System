@@ -2,8 +2,9 @@
 /* Footer */
 nav#footer{
     font-family: 'Comfortaa', cursive;
-    position: fixed;
-    bottom:0px;
+    position: relative;
+    margin-top: 6%;
+    bottom: 0px;
     width: 100%;
     background: #222222;
     color: #ffffff;
@@ -79,7 +80,7 @@ label{
     font-size: 20px;
 }
 input{
-    height: 30px;
+    height: 50px;
 }
 
 .header{
@@ -111,7 +112,7 @@ input{
 }
 #type_signup{
     margin-bottom: 10px;
-    height: 30px;
+    height: 50px;
 }
 li{
     list-style: none;

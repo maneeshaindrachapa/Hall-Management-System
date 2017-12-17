@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 
 import {LoginService} from "./services/login.service";
 import {AdminService} from "./services/admin.service";
+import {UserService} from "./services/user.service";
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { UserComponent } from './components/user/user.component';
@@ -47,7 +48,7 @@ const appRoutes: Routes= [
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [LoginService,AdminService],
+  providers: [LoginService,AdminService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
