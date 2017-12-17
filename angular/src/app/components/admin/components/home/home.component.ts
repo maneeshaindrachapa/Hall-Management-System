@@ -33,6 +33,10 @@ export class HomeComponent implements OnInit {
     this.router.navigate(["admin/adduser"]);
   }
 
+  payment(){
+    
+  }
+
   requestApprove(request){
     console.log(request.req_id);
     this.adminService.requestApprove(request.req_id,request.hall_id,request.room_no,request.free_beds,request.indexno).subscribe(res=>{
@@ -44,6 +48,7 @@ export class HomeComponent implements OnInit {
 
   requestIgnore(request){
     this.adminService.requestIgnore(request.req_id).subscribe(res=>{
+      this.getrequests();
       console.log("Ignored");
     });
   }

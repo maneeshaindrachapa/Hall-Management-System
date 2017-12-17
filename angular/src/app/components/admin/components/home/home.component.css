@@ -9,6 +9,7 @@
     margin-top:1%;
     z-index: 5;
     float: right;
+    cursor:pointer;
   }
   #title{
     float: left;
@@ -116,3 +117,7 @@ thead tr{
 .ai{
   border-radius: 30%;   
 }
+
+
+
+
