@@ -3,7 +3,6 @@ import { FormBuilder,FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginService } from "../../../../services/login.service";
 import { UserService } from "../../../../services/user.service";
 import { Router } from "@angular/router";
-import { posix } from 'path';
 import swal from 'sweetalert2';
 
 @Component({

@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
   }
 
   payment(){
-    
+    this.router.navigate(["admin/payment"]);
   }
 
   requestApprove(request){

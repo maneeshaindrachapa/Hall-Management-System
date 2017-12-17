@@ -22,5 +22,8 @@ export class AdminService {
   requestIgnore(req_id){
     return this.http.post("http://localhost/Hall-Management-System/api/reqIgnore.php",{"req_id":req_id}).map(res=>res.json());
   }
+  payment(indexno,price){
+    return this.http.post("http://localhost/Hall-Management-System/api/signup.php",{"indexno":indexno,"price":price}).map(res=>res.json());
+  }
 }
 

@@ -1,3 +1,74 @@
 <p>
   payment works!
 </p>
+<div class="header">
+    <ul id="navelements">
+        <li class="element"id="title"><h4 >Sumanadasa Hall Management System</h4></li>
+        <li class="element">
+            <div class="goback">
+                <button type="button" class="btn" (click)="goBack()" style="border-radius: 50%"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+              </div>
+        </li>
+      </ul>
+  
+  
+</div>
+<div id="header space"></div>
+
+<div class="container signin">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      <div class="section-title center">
+        <h2>Payement</h2>
+
+        <div class="clearfix"></div>
+      </div>
+
+      <form [formGroup]="paymentForm" method="post" action="" (ngSubmit)="payment(paymentForm.value)">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="indexno">Index No</label>
+
+              <div class="alert" *ngIf="!paymentForm.controls['indexno'].valid && paymentForm.controls['indexno'].touched">{{ titleAlert }}</div>
+
+              <input type="text" class="form-control" id="indexno" placeholder="Index No" name="indexno" formControlName="indexno">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="price">Price</label>
+
+              <div class="alert" *ngIf="!paymentForm.controls['price'].valid && paymentForm.controls['price'].touched">{{ titleAlert }}</div>
+
+              <input type="number" class="form-control" id="price" placeholder="price" name="price" formControlName="price" min="500">
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn tf-btn btn-default" name="submit_signup" [disabled]="!paymentForm.valid">Do Payment</button>
+      </form>
+
+      <span class="alert" *ngIf="error" id="error">{{error_message}}</span>
+    </div>
+  </div>
+</div>
+<nav id="footer">
+  <div class="container">
+    <div class="pull-left fnav">
+      <p>ALL RIGHTS RESERVED. COPYRIGHT © 2017. Designed by MiracalSolutions &#169;</p>
+    </div>
+  </div>
+</nav>
+
+<ng-template #forminfo>
+  <div class="form-container">
+    <div class="row columns">
+      <p>{{indexno }}</p>
+      <p>{{ price }}</p>
+    </div>
+  </div>
+</ng-template>

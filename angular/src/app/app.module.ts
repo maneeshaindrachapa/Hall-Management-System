@@ -26,7 +26,7 @@ import { PaymentComponent } from './components/admin/components/payment/payment.
 const appRoutes: Routes= [
   {path:"", component:LoginComponent},
   {path:"user", component:UserComponent,children:[{path:"profile",component:ProfileComponent},{path:"search",component:SearchComponent}]},
-  {path:"admin", component:AdminComponent,children:[{path:"home",component:HomeComponent},{path:"adduser",component:AddUserComponent}]}
+  {path:"admin", component:AdminComponent,children:[{path:"home",component:HomeComponent},{path:"adduser",component:AddUserComponent},{path:"payment",component:PaymentComponent}]}
 ];
 
 
