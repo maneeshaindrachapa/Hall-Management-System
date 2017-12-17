@@ -51,5 +51,8 @@ payment(post){
   goBack(){
       this.router.navigate(["admin/home"]);
   }
+  userdetails(){
+    this.router.navigate(["admin/userDetails"]);
+  }
 
 }

@@ -19,6 +19,7 @@ import { HomeComponent } from './components/admin/components/home/home.component
 import { AddUserComponent } from './components/admin/components/add-user/add-user.component';
 import { SearchComponent } from './components/user/components/search/search.component';
 import { PaymentComponent } from './components/admin/components/payment/payment.component';
+import { UserdetailsComponent } from './components/admin/components/userdetails/userdetails.component';
 
 
 
@@ -26,7 +27,7 @@ import { PaymentComponent } from './components/admin/components/payment/payment.
 const appRoutes: Routes= [
   {path:"", component:LoginComponent},
   {path:"user", component:UserComponent,children:[{path:"profile",component:ProfileComponent},{path:"search",component:SearchComponent}]},
-  {path:"admin", component:AdminComponent,children:[{path:"home",component:HomeComponent},{path:"adduser",component:AddUserComponent},{path:"payment",component:PaymentComponent}]}
+  {path:"admin", component:AdminComponent,children:[{path:"home",component:HomeComponent},{path:"adduser",component:AddUserComponent},{path:"payment",component:PaymentComponent},{path:"userDetails",component:UserdetailsComponent}]}
 ];
 
 
@@ -41,6 +42,7 @@ const appRoutes: Routes= [
     AddUserComponent,
     SearchComponent,
     PaymentComponent,
+    UserdetailsComponent,
   ],
   imports: [
     BrowserModule,
