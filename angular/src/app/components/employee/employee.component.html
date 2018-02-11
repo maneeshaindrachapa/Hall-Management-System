@@ -6,21 +6,17 @@
               <button type="button" class="btn btn-warning" (click)="logout()" ><i class="fa fa-power-off" aria-hidden="true"></i></button>
           </div>
       </li>
-      <li class="element">
-        <div class="search">
-              <button type="button" class="btn btn-warning" (click)="search()" ><i class="fa fa-search" aria-hidden="true"></i></button>
-          </div>
-      </li>
       </ul>
       </div>
-<div id="header space"></div>
-
-
-<div class="container-fluid">
-<div class="row content">
+  <div id="header space"></div>
+  
+  
+  <div class="container-fluid wrapper">
+  <div class="row content ">
   <div class="col-sm-3 sidenav hidden-xs">
-      <h5>Welcome,</h5>
-    <h2>{{details.firstname}}</h2>
+    <br>
+    <h5>Welcome,</h5>
+    <h2>{{details?.firstname}}&nbsp;{{details?.lastname}}</h2>
     <button type="button" (click)="toggleEdit()" class="btn btn-warning changes">Edit Profile Details</button>
     <div class="nav nav-pills nav-stacked editDetails" *ngIf=editDetails>
       <label for="firstname">First Name</label>
@@ -40,32 +36,32 @@
   
   <div class="col-sm-9">
     <div class="well">
-        <font color="{{greetColor}}" size="30"><i class="{{greetIcon}}" aria-hidden="true"></i></font><span class="greet">{{greet}}</span>
-        <p>Logged Date : {{ today | date : "EEEE | d  MMMM  y" }}</p>
+      <font color="{{greetColor}}" size="30"><i class="{{greetIcon}}" aria-hidden="true"></i></font><span class="greet">{{greet}}</span>
+      <p>Logged Date : {{ today | date : "EEEE | d  MMMM  y" }}</p>
     </div>
     <div class="row">
       <div class="col-sm-3">
         <div class="well">
-          <h4><i class="fa fa-home" aria-hidden="true"></i> Hall Name </h4>
-          <p>{{details.hall_name}}</p> 
+          <h4><i class="fa fa-home" aria-hidden="true"></i> Assigned Hall</h4>
+          <p>{{details?.hall_name}}</p> 
         </div>
       </div>
       <div class="col-sm-3">
         <div class="well">
-          <h4>Room Number</h4>
-          <p>{{details.room_id}}</p> 
+          <h4>Current Position</h4>
+          <p>{{details?.position}}</p> 
         </div>
       </div>
       <div class="col-sm-3">
         <div class="well">
-          <h4>Year</h4>
-          <p>{{details.year}}</p> 
+          <h4>Total Salary</h4>
+          <p>Rs. {{details?.salary}}</p> 
         </div>
       </div>
       <div class="col-sm-3">
         <div class="well">
-          <h4>Department</h4>
-          <p>{{details.dept_name}}</p> 
+          <h4>Hours/Week</h4>
+          <p>{{details?.hours_per_week}} hrs</p> 
         </div>
       </div>
     </div>
@@ -92,26 +88,15 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-8">
-        <div class="well">
-          <p>Text</p> 
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="well">
-          <p>Text</p> 
-        </div>
-      </div>
-    </div>
+    
   </div>
-</div>
-</div>
-
-<nav id="footer">
+  </div>
+  </div>
+  
+  <nav id="footer">
   <div class="container">
       <div class="pull-left fnav">
           <p>ALL RIGHTS RESERVED. COPYRIGHT © 2017. Designed by MiracalSolutions &#169;</p>
       </div>
   </div>
-</nav>
+  </nav>

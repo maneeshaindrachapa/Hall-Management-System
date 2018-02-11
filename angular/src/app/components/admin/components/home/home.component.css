@@ -118,6 +118,45 @@ thead tr{
   border-radius: 30%;   
 }
 
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 550px}
 
+/* Set gray background color and 100% height */
+.sidenav {
+  background-color: darkcyan;
+  height: 100%;
+  color:white;
+}
+    
+/* On small screens, set height to 'auto' for the grid */
+@media screen and (max-width: 767px) {
+  .row.content {height: auto;}
+  nav#footer[_ngcontent-c2]{bottom:unset} 
+
+}
+
+.container-fluid{
+  margin:1%;
+}
+.content{
+ margin-top:6%;
+}
+
+.well{
+  font-size: 50px;
+  background-color: #AAA;
+  color: #fff;
+}
+.well i{
+  transform: scale(1.0);
+  transition: all 0.2s;
+}
+.well i:hover{
+  transform: scale(1.2);
+  transition: all 0.2s;
+}
+.well button{
+  background-color: transparent;
+}
 
 

@@ -10,12 +10,15 @@ import { AdminService } from "../../../../services/admin.service";
 })
 export class HomeComponent implements OnInit {
   requests:Request[];
+  notification:boolean=false;
+  
    
   constructor(private adminService:AdminService ,private loginService:LoginService, private router:Router) { 
     this.getrequests();  
   }
 
   ngOnInit() {
+   
   }
 
   getrequests(){
@@ -32,9 +35,14 @@ export class HomeComponent implements OnInit {
   addUser(){
     this.router.navigate(["admin/adduser"]);
   }
-
+  showNotifications(){
+    this.notification=!this.notification;
+  }
   payment(){
     this.router.navigate(["admin/payment"]);
+  }
+  userDetails(){
+    this.router.navigate(["admin/userDetails"]);
   }
 
   requestApprove(request){
@@ -52,6 +60,8 @@ export class HomeComponent implements OnInit {
       console.log("Ignored");
     });
   }
+
+ 
 }
 
 interface Request{

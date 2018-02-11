@@ -45,13 +45,6 @@
     padding-bottom: 1%;
     font-size: 30px;
   }
-
-  .greet{
-    font-size: 30px;
-    vertical-align: center;
-    margin:0 0 0px 10px;
-  }
-
  .header{
   margin: 0;
   padding:0;
@@ -78,6 +71,10 @@
   margin-top:2%;
 }
 
+.wrapper{
+  overflow: scroll;
+  
+}
 .alert {
   background: #e6845e;
   color: white;
@@ -116,6 +113,7 @@ nav#footer{
 background: #222222;
 color: #ffffff;
 padding: 20px 0 15px 0;
+position: fixed;
 }
 nav#footer .fnav{ vertical-align: middle;}
 ul.footer-social li{
@@ -150,4 +148,10 @@ border-color: #FCAC45;
 }
 li{
   list-style: none;
+}
+
+.greet{
+  font-size: 30px;
+  vertical-align: center;
+  margin:0 0 0px 10px;
 }

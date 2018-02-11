@@ -20,12 +20,16 @@ import { AddUserComponent } from './components/admin/components/add-user/add-use
 import { SearchComponent } from './components/user/components/search/search.component';
 import { PaymentComponent } from './components/admin/components/payment/payment.component';
 import { UserdetailsComponent } from './components/admin/components/userdetails/userdetails.component';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { EmployeeService } from './services/employee.service';
+
 
 
 
 
 const appRoutes: Routes= [
   {path:"", component:LoginComponent},
+  {path:"employee", component:EmployeeComponent},
   {path:"user", component:UserComponent,children:[{path:"profile",component:ProfileComponent},{path:"search",component:SearchComponent}]},
   {path:"admin", component:AdminComponent,children:[{path:"home",component:HomeComponent},{path:"adduser",component:AddUserComponent},{path:"payment",component:PaymentComponent},{path:"userDetails",component:UserdetailsComponent}]}
 ];
@@ -43,6 +47,7 @@ const appRoutes: Routes= [
     SearchComponent,
     PaymentComponent,
     UserdetailsComponent,
+    EmployeeComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,7 @@ const appRoutes: Routes= [
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [LoginService,AdminService,UserService],
+  providers: [LoginService,AdminService,UserService,EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

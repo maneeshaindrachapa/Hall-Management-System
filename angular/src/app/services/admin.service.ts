@@ -10,8 +10,8 @@ export class AdminService {
 
   constructor(private http:Http) { }
 
-  signup(indexno,password,firstname,lastname,type){
-    return this.http.post("http://localhost/Hall-Management-System/api/signup.php",{"indexno":indexno,"password":password,"firstname":firstname,"lastname":lastname,"type":type}).map(res=>res.json());
+  signup(indexno,password,firstname,lastname,type,salary,dept){
+    return this.http.post("http://localhost/Hall-Management-System/api/signup.php",{"indexno":indexno,"password":password,"firstname":firstname,"lastname":lastname,"type":type,"salary":salary,"department":dept}).map(res=>res.json());
   }
   getRequests(){
     return this.http.get("http://localhost/Hall-Management-System/api/requests.php").map(res=>res.json());

@@ -58,12 +58,12 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="row" >
           <div class="col-md-12">
             <div class="form-group">
               <label for="type_signup">Type</label>
               <div>
-                <select name="type_signup" id="type_signup" class="col-md-12" formControlName="type_signup">
+                <select  (change)="salaryActive($event.target.value)" name="type_signup" id="type_signup" class="col-md-12" formControlName="type_signup">
                   <option value="1" selected>Admin</option>
                   <option value="2">Employee</option>
                   <option value="3">Student</option>
@@ -72,6 +72,32 @@
             </div>
           </div>
         </div>
+
+        <div class="row" *ngIf="deptOn">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="dept_signup">Department</label>
+                <div>
+                  <select  (change)="depatActive($event.target.value)" name="dept_signup" id="dept_signup" class="col-md-12" formControlName="dept_signup">
+                    <option value="1" selected>CSE</option>
+                    <option value="2">Elecronic</option>
+                    <option value="3">Electrical</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div class="row" *ngIf="salaryOn">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="salary">Salary</label>
+    
+                <input type="number" class="form-control" id="salary" placeholder="salary" name="salary" min="5000" value="5000" formControlName="salary_signup">
+              </div>
+            </div>
+          </div>
+
         <button type="submit" class="btn tf-btn btn-default" name="submit_signup" [disabled]="!signupForm.valid">Submit</button>
       </form>
 
@@ -94,6 +120,8 @@
       <p>{{ firstname_signup }}</p>
       <p>{{ lastname_signup }}</p>
       <p>{{ type_signup }}</p>
+      <p>{{salary_signup}}</p>
+      <p>{{dept_signup}}</p>
     </div>
   </div>
 </ng-template>

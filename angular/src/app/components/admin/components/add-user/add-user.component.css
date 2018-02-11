@@ -110,7 +110,7 @@ input{
 .fa-arrow-left:hover{
     color: #222;
 }
-#type_signup{
+#type_signup,#dept_signup{
     margin-bottom: 10px;
     height: 50px;
 }

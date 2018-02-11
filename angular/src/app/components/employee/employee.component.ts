@@ -1,24 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { LoginService } from "../../../../services/login.service";
+import { DatePipe } from '@angular/common';
+import { EmployeeService } from "../../services/employee.service";
+import { LoginService } from "../../services/login.service";
+import { $ } from 'protractor';
 
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-employee',
+  templateUrl: './employee.component.html',
+  styleUrls: ['./employee.component.css']
 })
-export class ProfileComponent implements OnInit {
-
-  index_signin:string;
-  details:{ firstname:string,
-            lastname:string,
-            dept_name:string,
-            year:number,
-            hall_id:number,
-            room_id:number,
-            password:string,
-            hall_name:string};
+export class EmployeeComponent implements OnInit {
+  details:{
+    firstname:string,
+    lastname:string,
+    salary:string,
+    hall_name:string,
+    position:string,
+    hours_per_week:string,
+    password:string
+  };
   re_enter_password:string;
   editDetails:boolean=false;
   errorMessage:string="";
@@ -31,57 +33,35 @@ export class ProfileComponent implements OnInit {
   greetIcon:string;
   greetColor:string;
 
-  constructor(private loginService:LoginService, private router:Router) {
-    this.index_signin=loginService.getIndex();
-    this.details={
-      firstname:"",
-      lastname:"",
-      dept_name:"",
-      year:null,
-      hall_id:null,
-      room_id:null,
-      password:"",
-      hall_name:""  
-    }
-    
-    this.loginService.getDetails().subscribe(details=>{
-      this.details.firstname=(details.firstname);
-      this.details.lastname=details.lastname;
-      this.details.dept_name=details.dept_name;
-      this.details.year=details.year;
-      this.details.hall_id=details.hall_id;
-      this.details.room_id=details.room_id;
-      this.details.password=details.password;
-      this.details.hall_name=details.hall_name;
+  
+  constructor(private router:Router,private employeeservice:EmployeeService,private loginservice:LoginService) {
+    this.employeeservice.getDetails().subscribe(data=>{
+      this.details = data;
     });
-    console.log(this.index_signin);
-    
+  
    }
 
   ngOnInit() {
     this.today = new Date();
     this.greet = this.greeting();
   }
-  
+
   toggleEdit(){
     this.editDetails=!this.editDetails;
+    console.log(this.details.hours_per_week);    
   }
   
   logout(){
     window.localStorage.removeItem('auth-key');
     this.router.navigate([""]);
   }
-  search(){
-    this.router.navigate(["user/search"]);
-  }
+
   changeDetails(details,re_enter_password){
     if(this.details.password!=this.re_enter_password){
-      console.log(this.details.password);
-      console.log(this.re_enter_password);
       this.error=!this.error;
       this.errorMessage="Password Does not Match";
     }else{
-      this.loginService.updateDetails(this.index_signin,this.details.firstname,this.details.lastname,this.details.password).subscribe(success=>{
+      this.loginservice.updateDetails(this.employeeservice.indexNo,this.details.firstname,this.details.lastname,this.details.password).subscribe(success=>{
         this.success=!this.success;
         this.error=false;
         this.successMessage="Profile Updated";
@@ -93,6 +73,7 @@ export class ProfileComponent implements OnInit {
     }
   
   }
+
   greeting(){
     this.hour = this.today.getHours();
     if(this.hour>=0 && this.hour<12){
@@ -112,4 +93,12 @@ export class ProfileComponent implements OnInit {
     return "Good Night !"
 }
   }
+
 }
+
+interface Data{
+  indexno:string,
+  firstname:string;
+  lastname:string;
+} 
+

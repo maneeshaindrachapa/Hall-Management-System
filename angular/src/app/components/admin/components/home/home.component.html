@@ -7,20 +7,16 @@
         </div>
     </li>
     <li class="element">
-      <div class="addUser">
-        <button type="button" class="btn btn-warning" (click)="addUser()"><i class="fa fa-user-plus" aria-hidden="true"></i></button>
-      </div>
-    </li>
-    <li class="element">
-      <div class="payment">
-        <button type="button" class="btn btn-warning" (click)="payment()"><i class="fa fa-usd" aria-hidden="true"></i></button>
-      </div>
-    </li>  
+        <div class="notification">
+          <button type="button" class="btn btn-warning" (click)="showNotifications()"><i class="fa fa-bell" aria-hidden="true"></i></button>
+        </div>
+      </li>
   </ul>
 </div>
-<div class="details">
+
+<div class="details" *ngIf="notification">
     <div>
-      <section>
+      <section >
       <h4 id="reqID">Requests for Rooms</h4>
       <div  class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
@@ -65,5 +61,36 @@
     </div>
   </div>
 
+  <div class="container-fluid">
+      <div class="row content">
+          <div class="row">
+              <div class="col-sm-3">
+                <div class="well" id="addNewUser">
+                  <h4>Add New User </h4>
+                  <p><i class="fa fa-user-plus" aria-hidden="true" (click)="addUser()"></i></p> 
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="well" id="payments">
+                  <h4>Payments</h4>
+                  <p><i class="fa fa-usd" aria-hidden="true" (click)="payment()"></i></p> 
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="well" id="userDetails">
+                  <h4>User Details</h4>
+                  <p><i class="fa fa-user" aria-hidden="true" (click)="userDetails()"></i></p> 
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="well">
+                  <h4>Hall Details</h4>
+                  <p><i class="fa fa-home"></i></p> 
+                </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              
 
   

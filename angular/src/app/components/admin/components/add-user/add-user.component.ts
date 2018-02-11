@@ -17,6 +17,12 @@ export class AddUserComponent implements OnInit {
   firstname_signup:string;
   lastname_signup:string;
   type_signup:string;
+  salary_signup:number;
+  dept_signup:string;
+  choosemod:string="";
+
+  salaryOn:boolean=false;
+  deptOn:boolean=false;
   post:any;
   error:boolean=false;
   error_message:string="";
@@ -29,11 +35,15 @@ export class AddUserComponent implements OnInit {
     this.firstname_signup="";
     this.lastname_signup="";
     this.type_signup="Student";
+    this.dept_signup="1";
+    this.salary_signup=5000;
     this.signupForm=formBuilder.group({
         "index_signup":[null, Validators.required],
         "firstname_signup":[null,Validators.required],
         "lastname_signup":[null,Validators.required],
-        "type_signup":[null,Validators.required]
+        "type_signup":[null,Validators.required],
+        "salary_signup":[null],
+        "dept_signup":[null],
     });
 }
 
@@ -46,8 +56,10 @@ ngOnInit() {
       this.firstname_signup=post.firstname_signup;
       this.lastname_signup=post.lastname_signup;
       this.type_signup=post.type_signup;
-      console.log(post.type_signup);
-      this.adminService.signup(this.index_signup,this.password_signup,this.firstname_signup,this.lastname_signup,this.type_signup).subscribe(
+      this.salary_signup=post.salary_signup;
+      this.dept_signup=post.dept_signup;
+      console.log(post.salary_signup);
+      this.adminService.signup(this.index_signup,this.password_signup,this.firstname_signup,this.lastname_signup,this.type_signup,this.salary_signup,this.dept_signup).subscribe(
           res=>{
             this.error=!this.error;
             this.error_message="User Created Successfully";
@@ -61,6 +73,22 @@ ngOnInit() {
       );
   }
 
+  salaryActive(value: string){
+    switch(value) {
+      case "1":
+        this.salaryOn=true;
+        this.deptOn=false;
+        break;
+      case "2":
+        this.salaryOn=true;
+        this.deptOn=false;
+        break;
+      case "3":
+        this.deptOn=true;
+        this.salaryOn=false;
+        break;
+    }
+  }
   goBack(){
       this.router.navigate(["admin/home"]);
   }
