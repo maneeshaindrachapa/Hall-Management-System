@@ -1,5 +1,5 @@
 # Hall Management System - Angular 4 with PHP Backend
-This repository contains a comprehensive guide on integrating Angular 4 with a PHP backend for a Hall Management System. Follow the steps below to set up the project, establish a database connection, and seamlessly connect the frontend and backend.
+This repository contains a comprehensive guide on integrating Angular 4 with a PHP backend for a Hall Management System. Please follow the steps below to set up the project, set up a database connection, and seamlessly connect the frontend and backend.
 
 ## Installation and Setup
 - Ensure Node.js and npm are installed on your system.
@@ -13,7 +13,7 @@ This repository contains a comprehensive guide on integrating Angular 4 with a P
 ```
  $ npm install
 ```
-- Make sure the database is up and running and the provided database file is imported
-- Make sure the PHP server is running
+- Make sure the database is up and running and the database dump file is imported to your database.
+- Make sure to put the API code inside the `XAMPP` webapps directory.
 
 
